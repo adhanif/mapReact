@@ -1,0 +1,30 @@
+/* #map { height: 180px; } */
+
+.custom-card {
+    border: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  .custom-card-header {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .custom-card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-body{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .custom-popup {
+    width: 250px; 
+    height: 200px; 
+  }
