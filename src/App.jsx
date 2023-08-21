@@ -30,7 +30,7 @@ function App() {
       {ipData ? (
         <>
           <p>{ipData.location.country}</p>
-          <div>
+          <div className="d-flex justify-content-center">
             <Map
               position={[ipData.location.lat, ipData.location.lng]}
               ip={ipData.ip}
