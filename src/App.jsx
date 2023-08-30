@@ -17,7 +17,7 @@ function App() {
       .get(url)
       .then((res) => {
         setIpData(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
