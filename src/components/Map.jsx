@@ -1,5 +1,15 @@
 import React from "react";
 import "./Map.css";
+import iconMarker from "leaflet/dist/images/marker-icon.png";
+import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+const icon = L.icon({
+  iconRetinaUrl: iconRetina,
+  iconUrl: iconMarker,
+  shadowUrl: iconShadow,
+  iconSize: [20, 30],
+});
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
@@ -15,7 +25,7 @@ export default function Map({ ipData }) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[ipData.latitude, ipData.longitude]}>
+      <Marker position={[ipData.latitude, ipData.longitude]} icon={icon}>
         <Popup className="custom-popup">
           <div className="card-header custom-card-header">
             <img
