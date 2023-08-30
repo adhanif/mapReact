@@ -3,40 +3,41 @@ import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import "./App.css";
 import Map from "./components/Map.jsx";
+import { Container, Row, Col, Stack } from "react-bootstrap";
 
-// console.log(import.meta.env);
 function App() {
   const [ipData, setIpData] = useState();
   const apiKey = import.meta.env.VITE_API_KEY;
-  // console.log(apiKey);
-  // https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=8.8.8.8
-  const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}`;
+  const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`;
 
   useEffect(() => {
     axios
       .get(url)
       .then((res) => {
-        // console.log(res.data);
         setIpData(res.data);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
-  // console.log(position);
   return (
     <>
       {ipData ? (
         <>
-          <p>{ipData.location.country}</p>
-          <div className="d-flex justify-content-center">
-            <Map
-              position={[ipData.location.lat, ipData.location.lng]}
-              ip={ipData.ip}
-              location={ipData.location}
-            />
-          </div>
+          <Container className="bg-light text-center">
+            <h1>Your location and IP</h1>
+            <Row className="justify-content-center">
+              <Map ipData={ipData} />
+            </Row>
+            <Row
+              className="justify-content-center bg-light"
+              style={{ width: "70%", margin: "0 auto" }}
+            >
+              <p>egrzrrz</p>
+            </Row>
+          </Container>
         </>
       ) : (
         <p>Loading IP data...</p>
