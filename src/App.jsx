@@ -4,6 +4,8 @@ import axios from "axios";
 import "./App.css";
 import Map from "./components/Map.jsx";
 import { Container, Row, Col, Stack } from "react-bootstrap";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   const [ipData, setIpData] = useState();
@@ -24,24 +26,23 @@ function App() {
 
   return (
     <>
-      {ipData ? (
-        <>
-          <Container className="bg-light text-center">
-            <h1>Your location and IP</h1>
-            <Row className="justify-content-center">
-              <Map ipData={ipData} />
-            </Row>
-            <Row
-              className="justify-content-center bg-light"
-              style={{ width: "70%", margin: "0 auto" }}
-            >
-              <p>egrzrrz</p>
-            </Row>
-          </Container>
-        </>
-      ) : (
-        <p>Loading IP data...</p>
-      )}
+      <div className="app-container">
+        <Navbar ipData={ipData} />
+        {ipData ? (
+          <>
+            {/* style={{ minHeight: "100vh" }} */}
+            <Container className="text-center my-auto">
+              <Row className="justify-content-center">
+                <Map ipData={ipData} />
+              </Row>
+            </Container>
+          </>
+        ) : (
+          <p>Loading IP data...</p>
+        )}
+
+        <Footer />
+      </div>
     </>
   );
 }
