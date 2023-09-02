@@ -3,6 +3,7 @@ import "./Map.css";
 import iconMarker from "leaflet/dist/images/marker-icon.png";
 import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
 import { Container, Row, Col, Table } from "react-bootstrap";
+import Weather from "./Weather";
 
 const icon = L.icon({
   iconRetinaUrl: iconRetina,
@@ -49,6 +50,9 @@ export default function Map({ ipData }) {
           <p>
             {ipData.continent_name} ({ipData.continent_code})
           </p>
+        </div>
+        <div>
+          <Weather ipData={ipData} />
         </div>
       </Col>
       <Col className="col-md-7 col-12">
