@@ -26,7 +26,7 @@ export default function Weather({ ipData }) {
         <div className="d-flex flex-row">
           <div className="mr-6">
             <p className="card-text-2 m-0 fw-bold">Weather in {ipData.city}</p>
-            <p className="m-0">{weatherData.main.temp - 273.15} Celcius </p>
+            <p className="m-0">{weatherData.main.temp - 273.15} °C </p>
             <p>wind {weatherData.wind.speed} m/s</p>
           </div>
           <div>
