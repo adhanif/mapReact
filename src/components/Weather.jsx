@@ -12,7 +12,7 @@ export default function Weather({ ipData }) {
     axios
       .get(WeatherUrl)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setWeatherData(res.data);
       })
       .catch((err) => {
