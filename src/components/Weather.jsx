@@ -1,6 +1,6 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function Weather({ ipData }) {
   const [weatherData, setWeatherData] = useState(null);
@@ -23,18 +23,18 @@ export default function Weather({ ipData }) {
   return (
     <div>
       {weatherData ? (
-        <div className="d-flex flex-row">
-          <div className="mr-6">
-            <p className="card-text-2 m-0 fw-bold">Weather in {ipData.city}</p>
-            <p className="m-0">
-              {Math.round(weatherData.main.temp - 273.15)} °C{" "}
+        <div className='d-flex flex-row'>
+          <div className='mr-6'>
+            <p className='card-text-2 m-0 fw-bold'>Weather in {ipData.city}</p>
+            <p className='m-0'>
+              {Math.round(weatherData.main.temp - 273.15)} °C{' '}
             </p>
             <p>wind {weatherData.wind.speed} m/s</p>
           </div>
           <div>
             <img
               src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-              alt=""
+              alt=''
             />
           </div>
         </div>

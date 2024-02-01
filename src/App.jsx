@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import "leaflet/dist/leaflet.css";
-import axios from "axios";
-import "./App.css";
-import Map from "./components/Map.jsx";
-import { Container, Row, Col, Stack } from "react-bootstrap";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { useState, useEffect } from 'react';
+import 'leaflet/dist/leaflet.css';
+import axios from 'axios';
+import './App.css';
+import Map from './components/Map.jsx';
+import { Container, Row, Col, Stack } from 'react-bootstrap';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   const [ipData, setIpData] = useState();
@@ -26,13 +26,13 @@ function App() {
 
   return (
     <>
-      <div className="app-container">
+      <div className='app-container'>
         <Navbar ipData={ipData} />
         {ipData ? (
           <>
             {/* style={{ minHeight: "100vh" }} */}
-            <Container className="text-center my-auto">
-              <Row className="justify-content-center">
+            <Container className='text-center my-auto'>
+              <Row className='justify-content-center'>
                 <Map ipData={ipData} />
               </Row>
             </Container>
